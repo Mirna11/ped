@@ -46,8 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPLogin.Designer.cs">
+      <DependentUpon>CPLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPMain.Designer.cs">
+      <DependentUpon>CPMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CPLogin.resx">
+      <DependentUpon>CPLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPMain.resx">
+      <DependentUpon>CPMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaDatos\capaDatos.csproj">
+      <Project>{11d1f6d7-e467-4e0a-8379-f5b5781b3c83}</Project>
+      <Name>capaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

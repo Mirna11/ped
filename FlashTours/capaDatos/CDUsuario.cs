@@ -8,19 +8,17 @@ using System.Threading.Tasks;
 
 namespace capaDatos
 {
-    class CDUsuario
+    public class CDUsuario
     {
 
         private CDConexion conexion = new CDConexion();
         private SqlDataReader leer;
 
-        public SqlDataReader logearse(string user, string pass)
+        public SqlDataReader logearse(string email, string pass)
         {
-
-
             SqlCommand comando = new SqlCommand("logearse", conexion.AbrirConexion());
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@usuario", user);
+            comando.Parameters.AddWithValue("@email", email);
             comando.Parameters.AddWithValue("@pass", pass);
             leer = comando.ExecuteReader();
             comando.Parameters.Clear();

@@ -88,4 +88,14 @@ create table ticket(
 	cliente int foreign key references usuarios(id),
 	codigo varchar(35)
 );
+go
 
+create proc logearse
+(
+@email varchar(50),
+@pass nvarchar(30)
+) as
+begin
+	select * from usuarios where email=@email AND contrasenia = @pass;
+end
+GO
